@@ -1,0 +1,91 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+	  <title>AR WEB API TRIAL</title>
+    <script src="./ar.js"></script>
+	<script src="./sound.js"></script>
+  </head>
+  <body>
+	<h2>AR-DV1 Tablet App Interface Web Adapter API Trial Page</h2>
+	<div style="margin: 1em;">
+	<h3>API server</h3>
+	<label>IP address</label>
+	<input type="text" id="serverURL" value="192.168.0.20"/>
+	<label>port number</label>
+	<input type="text" id="serverPORT" value="3000"/>
+	<h3>Authenticate</h3>
+	<button onClick='login()'>login</button>
+	<button onClick='setPassword()'>setPassword</button>
+	<span>: "arwebreceiver"</span>
+	<br />
+	<button onClick='loginXXXX()'>loginXXXX</button>
+	<button onClick='setPasswordXXXX()'>setPasswordXXXX</button>
+	<span>: "arwebreceiverXXXX"</span>
+	<h3>Receiver</h3>
+	<button onClick='powerOn()'>PowerOn</button>
+	<button onClick='powerOff()'>powerOff</button>
+	<button onClick='getReceiverState()'>getReceiverState</button>
+	<button onClick='setTime()'>setTime</button>
+	<button onClick='setFrequency()'>setFrequency</button>
+	<button onClick='setPrevStep()'>setPrevStep</button>
+	<button onClick='setNextStep()'>setNextStep</button>
+	<button onClick='setFrequencyStep()'>setFrequencyStep</button>
+	<br />
+	<button onClick='setFrequencyStepAdjust()'>setFrequencyStepAdjust</button>
+	<button onClick='getFrequencyStepAdjust()'>getFrequencyStepAdjust</button>
+	<button onClick='setDemodulateMode()'>setDemodulateMode 0F0(FM)</button>
+	<button onClick='setIFbandwidth()'>setIFbandwidth</button>
+	<button onClick='getIFbandwidth()'>getIFbandwidth</button>
+	<br />
+	<button onClick='setDigitalDataOutput()'>setDigitalDataOutput</button>
+	<button onClick='getDigitalDataOutput()'>getDigitalDataOutput</button>
+	<button onClick='getDigitalAdditionalInfo()'>getDigitalAdditionalInfo</button>
+	<br />
+	<button onClick='setLevelSquelch()'>setLevelSquelch</button>
+	<button onClick='getLevelSquelch()'>getLevelSquelch</button>
+	<button onClick='setVolume()'>setVolume</button>
+	<button onClick='getVolume()'>getVolume</button>
+	<button onClick='setVFO()'>setVFO</button>
+	<button onClick='getVFO()'>getVFO</button>
+	<button onClick='getSmeter()'>getSmeter</button>
+	<button onClick='setReceiverStateNotification()'>setReceiverStateNotification</button>
+	<br />
+	<button onClick='getSpectrumCenter()'>getSpectrumCenter</button>
+	<button onClick='setSpectrumCenter()'>setSpectrumCenter</button>
+	<button onClick='getSpectrumSpan()'>getSpectrumspan</button>
+	<button onClick='setSpectrumSpan()'>setSpectrumspan</button>
+	<button onClick='getSpectrumData()'>getSpectrumData</button>
+	<br />
+	<button onClick='getCTCSS()'>getCTCSS</button>
+	<button onClick='setCTCSS()'>setCTCSS</button>
+	<button onClick='getCTCSS_Frequency()'>getCTCSS_Frequency</button>
+	<button onClick='setCTCSS_Frequency()'>setCTCSS_Frequency</button>
+	<br />
+	<button onClick='getDCS()'>getDCS</button>
+	<button onClick='setDCS()'>setDCS</button>
+	<button onClick='getDCSCode()'>getDCSCode</button>
+	<button onClick='setDCSCode()'>setDCSCode</button>
+	<button onClick='getDCREncryptionCode()'>getDCREncryptionCode</button>
+	<button onClick='setDCREncryptionCode()'>setDCREncryptionCode</button>
+	<br />
+	<button onClick='setDemodulateModeTTC()'>setDemodulateMode 090(T-TC)</button>
+	<button onClick='setTTCSlotAUTO()'>setTTCSlot AUTO</button>
+	<button onClick='setTTCSlot1()'>setTTCSlot #1</button>
+	<button onClick='getTTCSlot()'>getTTCSlot</button>
+	<h3>Adapter</h3>
+	<button onClick='shutdown()'>shutdown</button>
+	<button onClick='reboot()'>reboot</button>
+	<button onClick='getNetworkInterfaces()'>getNetworkInterfaces</button>
+	<button onClick='getWifiSettings()'>getWifiSettings</button>
+	<button onClick='setWifiSettings()'>setWifiSettings</button>
+	<button onClick="setSSH('1')">startSSH</button>
+	<button onClick="setSSH('0')">stopSSH</button>
+	<h3>Sound</h3>
+	<button onClick='PlayButtonClick()'>Play</button>
+	<button onClick='StopButtonClick()'>Stop</button>
+	<label>volume</label>
+	<input type="number"/ value="20" id="vol" oninput="updateVolume()"/>
+	<div id="result" style="margin: 1em 0;padding: 1em;border: solid 1px;width: 80%;height: 500px;overflow: auto;"></div>
+	</div>
+  </body>
+</html>
