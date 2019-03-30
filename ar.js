@@ -1,3 +1,4 @@
+/*! ar.js | 2019/03 AOR, LTD. | www.aorja.com/receiver/ar-web-api/  */
 const SERVER_PORT = "3000";
 const SERVER_ADDRESS = "192.168.0.20";
 const sendCommand = (method, command, value, param) => {
@@ -436,9 +437,9 @@ const setWifiSettings = async () => {
 	const value = {
 		operationMode: "b",
 		country: "JP",
-		ssid: "AR-MEMORY-SERVER",
+		ssid: "AR-WEB-RECEIVER",
 		channel: "1",
-		passphrase: "armemoryserver"
+		passphrase: "arwebreceiver"
 	};
 	setResultMessage(`set wifi settings`);
 	const result = await sendCommand('POST', 'adapter/wifi', value);

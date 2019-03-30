@@ -8,19 +8,22 @@
   <body>
 	<h2>AR-DV1 Tablet App Interface Web Adapter API Trial Page</h2>
 	<div style="margin: 1em;">
+	<span>Please login first. Otherwise, authentication fails.</span><br />
+	<span>Please see <a href="ar.js" target="_blank">ar.js</a> for details.</span>
 	<h3>API server</h3>
 	<label>IP address</label>
 	<input type="text" id="serverURL" value="192.168.0.20"/>
 	<label>port number</label>
 	<input type="text" id="serverPORT" value="3000"/>
 	<h3>Authenticate</h3>
+	<span>You can authenticate with any password connecting from wifi.</span><br />
 	<button onClick='login()'>login</button>
 	<button onClick='setPassword()'>setPassword</button>
-	<span>: "arwebreceiver"</span>
+	<span>: "pw: arwebreceiver"</span>
 	<br />
 	<button onClick='loginXXXX()'>loginXXXX</button>
 	<button onClick='setPasswordXXXX()'>setPasswordXXXX</button>
-	<span>: "arwebreceiverXXXX"</span>
+	<span>: "pw: arwebreceiverXXXX"</span>
 	<h3>Receiver</h3>
 	<button onClick='powerOn()'>PowerOn</button>
 	<button onClick='powerOff()'>powerOff</button>
@@ -77,7 +80,7 @@
 	<button onClick='reboot()'>reboot</button>
 	<button onClick='getNetworkInterfaces()'>getNetworkInterfaces</button>
 	<button onClick='getWifiSettings()'>getWifiSettings</button>
-	<button onClick='setWifiSettings()'>setWifiSettings</button>
+	<button onClick='setWifiSettings()'>setWifiSettings AR-WEB-RECEIVER/arwebreceiver/ch1</button>
 	<button onClick="setSSH('1')">startSSH</button>
 	<button onClick="setSSH('0')">stopSSH</button>
 	<h3>Sound</h3>
