@@ -197,8 +197,28 @@ const setSelectSquelch = async () => {
 		setResultMessage(`code: ${result.code} message: ${result.message}`);
 	}
 };
+const setNoiseSelectSquelch = async () => {
+	const value = {value: 1};
+	setResultMessage(`set select squelch: ${value.value}`);
+	const result = await sendCommand('POST', 'receiver/select_squelch', value);
+	if (result.code == 0){
+		setResultMessage(`code: ${result.code}`);
+	}else{
+		setResultMessage(`code: ${result.code} message: ${result.message}`);
+	}
+};
+const setLevelSelectSquelch = async () => {
+	const value = {value: 2};
+	setResultMessage(`set select squelch: ${value.value}`);
+	const result = await sendCommand('POST', 'receiver/select_squelch', value);
+	if (result.code == 0){
+		setResultMessage(`code: ${result.code}`);
+	}else{
+		setResultMessage(`code: ${result.code} message: ${result.message}`);
+	}
+};
 const setNoiseSquelch = async () => {
-	const value = {value: 10};
+	const value = {value: 09};
 	setResultMessage(`set noise squelch: ${value.value}`);
 	const result = await sendCommand('POST', 'receiver/noise_squelch', value);
 	if (result.code == 0){
