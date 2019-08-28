@@ -187,6 +187,26 @@ const powerOff = async () => {
 		setResultMessage(`code: ${result.code} message: ${result.message}`);
 	}
 };
+const setSelectSquelch = async () => {
+	const value = {value: 0};
+	setResultMessage(`set select squelch: ${value.value}`);
+	const result = await sendCommand('POST', 'receiver/select_squelch', value);
+	if (result.code == 0){
+		setResultMessage(`code: ${result.code}`);
+	}else{
+		setResultMessage(`code: ${result.code} message: ${result.message}`);
+	}
+};
+const setNoiseSquelch = async () => {
+	const value = {value: 10};
+	setResultMessage(`set noise squelch: ${value.value}`);
+	const result = await sendCommand('POST', 'receiver/noise_squelch', value);
+	if (result.code == 0){
+		setResultMessage(`code: ${result.code}`);
+	}else{
+		setResultMessage(`code: ${result.code} message: ${result.message}`);
+	}
+};
 const setLevelSquelch = async () => {
 	const value = {value: 10};
 	setResultMessage(`set level squelch: ${value.value}`);
@@ -256,6 +276,26 @@ const getVFO = async() => {
 		for(let item of result.value){
 			setResultMessage(`vfo: ${item.vfo} frequency: ${item.frequency} step frequency: ${item.stepFrequency} step adjust frequency: ${item.stepAdjustFrequency} mode: ${item.mode}`);
 		}
+	}else{
+		setResultMessage(`code: ${result.code} message: ${result.message}`);
+	}
+};
+const getSelectSquelch = async () => {
+	setResultMessage('get select squelch');
+	const value = null;
+	const result = await sendCommand('GET', 'receiver/select_squelch', value);
+	if (result.code == 0){
+		setResultMessage(`code: ${result.code} value: ${result.value}`);
+	}else{
+		setResultMessage(`code: ${result.code} message: ${result.message}`);
+	}
+};
+const getNoiseSquelch = async () => {
+	setResultMessage('get noise squelch');
+	const value = null;
+	const result = await sendCommand('GET', 'receiver/noise_squelch', value);
+	if (result.code == 0){
+		setResultMessage(`code: ${result.code} value: ${result.value}`);
 	}else{
 		setResultMessage(`code: ${result.code} message: ${result.message}`);
 	}
